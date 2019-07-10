@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Fill student details</title>
+<script>
+	function validatename()
+	{
+		x = document.forms["details_form"]["name"].value;
+		var req_text = document.getElementById("name_required");
+
+		if(x == "")
+		{
+			req_text.style.visibility = "visible";
+			return false;
+		}
+		else
+		{
+			req_text.style.visibility = "hidden";
+			return true;
+		}
+	}
+	function validateage()
+	{
+		x = document.forms["details_form"]["age"].value;
+		var req_text = document.getElementById("field_required");
+
+		if(x < 20 || x > 80 || isNaN(x))
+		{
+			req_text.style.visibility = "visible";
+			return false;
+		}
+		else
+		{
+			req_text.style.visibility = "hidden";
+			return true;
+		}
+	}
+</script>
+</head>
+
+<body id="det_form">
+	<form name="details_form" action="action.cfm" method="post">
+		Name: <input name="name" type="text" onblur="validatename()">
+		<div id="name_required" style="visibility: hidden; font-size: 75%; color: red;">Name is required</div><br>
+		Age: <input name="age" type="text" onblur="validateage()"> 
+		<div id="field_required" style="visibility: hidden; font-size: 75%; color: red;">Age must be an integer between 20 and 80</div><br>
+		<input name="sub" type="submit" value="Submit">
+	</form>
+</body>
+</html>
