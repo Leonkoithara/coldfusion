@@ -37,12 +37,16 @@
 </script>
 </head>
 
-<body id="det_form">
+<body>
 	<form name="details_form" action="action.cfm" method="post">
 		Name: <input name="name" type="text" onblur="validatename()">
 		<div id="name_required" style="visibility: hidden; font-size: 75%; color: red;">Name is required</div><br>
 		Age: <input name="age" type="text" onblur="validateage()"> 
 		<div id="field_required" style="visibility: hidden; font-size: 75%; color: red;">Age must be an integer between 20 and 80</div><br>
+		Sex: <br><input name="sex" type="radio"	value="M"> Male
+			 <br><input name="sex" type="radio"	value="F"> Female
+			 <br><input name="sex" type="radio"	value="O"> Other<br>
+		Date of Birth: <input name="dob" type="date"><br>
 		<input name="sub" type="submit" value="Submit">
 	</form>
 </body>
